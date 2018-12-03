@@ -1,0 +1,8 @@
+
+importFrom("curl", "curl")
+importFrom("jsonlite", "fromJSON")
+importFrom("utils", "read.table")
+
+export("qrandom",
+       "qrandomunif",
+       "qrandomnorm")

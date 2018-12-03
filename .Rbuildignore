@@ -1,0 +1,13 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.md$
+^NEWS\.md$
+^cran-comments\.md$
+^\.travis\.yml$
+^\.appveyor\.yml$
+^\.DS_Store$
+^LICENSE\.md$
+^CODE_OF_CONDUCT\.md$
+^\.github$
+^PULL_REQUEST_TEMPLATE\.md$
+^CONTRIBUTING\.md$

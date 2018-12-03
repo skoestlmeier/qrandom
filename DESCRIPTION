@@ -1,0 +1,21 @@
+Package: qrandom
+Type: Package
+Title: True Random Numbers using the ANU Quantum Random Numbers Server
+Version: 1.0
+Date: 2018-12-03
+Authors@R: c(person(given = "Siegfried", family = "Köstlmeier", role = c("aut", "cre"), email = "siegfried.koestlmeier@gmail.com"))
+Maintainer: Siegfried Köstlmeier <siegfried.koestlmeier@gmail.com>
+Description: The ANU Quantum Random Number Generator provided by the Australian National University
+ generates true random numbers in real-time by measuring the quantum fluctuations of the vacuum. This package offers an interface using their API.
+ The electromagnetic field of the vacuum exhibits random fluctuations in phase and amplitude at all frequencies.
+ By carefully measuring these fluctuations, one is able to generate ultra-high bandwidth random numbers.
+ The quantum Random Number Generator is based on the papers by Symul et al., (2011) <doi:10.1063/1.3597793>
+ and Haw, et al. (2015) <doi:10.1103/PhysRevApplied.3.054004>.
+ The package offers functions to retrieve a sequenze of random integers or hexadecimals and true random samples from a normal or uniform distribution.
+License: GPL-2 | file LICENSE
+Imports: curl, utils, jsonlite
+Suggests: testthat
+Depends: R (>= 3.5)
+Encoding: UTF-8
+LazyData: true
+URL: https://qrng.anu.edu.au/index.php
