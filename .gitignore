@@ -1,4 +1,6 @@
 .Rproj.user
 .Ruserdata
 .DS_Store
+.RData
+.Rhistory
 qrandom.Rproj

@@ -8,9 +8,9 @@ Overview
 [![Build status](https://ci.appveyor.com/api/projects/status/nsrpduvdn28gf78r?svg=true)](https://ci.appveyor.com/project/skoestlmeier/qrandom)
 [![codecov](https://codecov.io/gh/skoestlmeier/qrandom/branch/master/graph/badge.svg)](https://codecov.io/gh/skoestlmeier/qrandom)
 [![Total Downloads](https://cranlogs.r-pkg.org/badges/grand-total/qrandom?color=blue)](https://CRAN.R-project.org/package=qrandom)
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
-`qrandom` is an R package providing an interface to the [ANU Quantum Random Number Generator](https://qrng.anu.edu.au/index.php) provided by the Australian National University. standardized test for abnormal returns in long-horizon event studies that takes into account the cross-sectional correlation, autocorrelation, and heteroskedasticity of stock returns. A ultra-high bandwith of true random numbers is generated in real-time by measuring the quantum fluctuations of the vacuum. The quantum Random Number Generator is based on the papers *[Real time demonstration of high bitrate quantum random number generation with coherent laser light](https://doi.org/10.1063/1.3597793)* by Symul et al., (2011) and 
+`qrandom` is an R package providing an interface to the [ANU Quantum Random Number Generator](https://qrng.anu.edu.au/index.php) provided by the Australian National University. An ultra-high bandwith of true random numbers is generated in real-time by measuring the quantum fluctuations of the vacuum. The quantum Random Number Generator is based on the papers *[Real time demonstration of high bitrate quantum random number generation with coherent laser light](https://doi.org/10.1063/1.3597793)* by Symul et al., (2011) and 
 *[Maximization of Extractable Randomness in a Quantum Random-Number Generator](https://doi.org/10.1103/PhysRevApplied.3.054004)* by Haw, et al. (2015).
 
 ### Key Features
@@ -35,19 +35,20 @@ Notes
 
 * **qrandom**
 
-  This function generates a true random sequence of up to 1.024 numbers per request. The type
+  This function generates a true random sequence of up to 1,024 numbers per request. The type
   - 'uint8' generates integer values between 0 and 255 (both including).
-  - 'uint16' generates integer values between 0 and 65535 (both including).
+  - 'uint16' generates integer values between 0 and 65,535 (both including).
   - 'hex16' generates hexadecimal values between 00 and ff (both including).
   
-  The 'blocksize' is only needed for request type 'hex16' and sets the length of each block which can be a length between 1 and 1.024 (both including).
+  The 'blocksize' is only needed for request type 'hex16' and sets the length of each block which can be a length between 1 and 1,024 (both including).
   Further information can be obtained by the official QRNG\@ANU JSON API documentation [here](https://qrng.anu.edu.au/API/api-demo.php).
 
 * **qrandomunif**
 
-  This function implements 'qrandom' and transforms the true random sequence into random numbers from a uniform distribution with parameters a and b.
-  The transformation is done via ... Be default, the transformation results in a standard uniform distribution
-  with values between 0 and 1.
+  This function returns a sample of 1 - 1,024 true random numbers from a uniform distribution with parameters a (minimum value) and b (maximum value).
+  Per default (a=0 and b=1), a standard uniform distribution is assumed.
+
+  Normalization of data into the interval [a; b] is done by using the "min-max" formula as described [here](https://stats.stackexchange.com/a/178629/188976). This method can not be applied for one single number as this would result in the attempt of a  division by zero. For two number, this method results into returning 0 and 1 in all cases. So if only one or two numbers are requested, these numbers (which are within the interval [0; 65,535]) are divided by their possible maximum value of 65,535. For all requests with three or more true random numbers, the mentioned min-max normalization is used.
 
 * **qrandomnorm**
 
