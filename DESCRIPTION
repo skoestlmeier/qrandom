@@ -13,7 +13,7 @@ Description: The ANU Quantum Random Number Generator provided by the Australian 
  and Haw, et al. (2015) <doi:10.1103/PhysRevApplied.3.054004>.
  The package offers functions to retrieve a sequenze of random integers or hexadecimals and true random samples from a normal or uniform distribution.
 License: GPL-2 | file LICENSE
-Imports: curl, utils, jsonlite
+Imports: curl, jsonlite, methods, Rmpfr, utils
 Suggests: testthat
 Depends: R (>= 3.5)
 Encoding: UTF-8

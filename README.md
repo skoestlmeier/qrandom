@@ -16,9 +16,9 @@ Overview
 ### Key Features
 This package offers functions to retrieve a sequenze of random integers or hexadecimals and to generate true random samples from a normal or uniform distribution. Functions of `qrandom` are:
 
-* qrandom (sequence of random numbers)
-* qrandomunif (random numbers from a uniform distribution)
-* qrandomnorm (random numbers from a normal distribution)
+* qrandom (sequence of true random numbers)
+* qrandomunif (true random numbers from a uniform distribution)
+* qrandomnorm (true random numbers from a normal distribution)
 
 Installation
 ------------
@@ -30,31 +30,60 @@ install.packages("qrandom")
 # install.packages("devtools")
 devtools::install_github("skoestlmeier/qrandom")
 ```
+
+Data
+-----
+We try our best to provide unique true random numbers. All API requests provided by this package are using SSL. As long as nobody is able to break the encryption protocol, the random numbers you obtain should be unique and secure.
+
+
+The true random numbers provided by this package are generated in real-time by measuring the quantum fluctuations of the vacuum. The official [QRNG@ANU JSON API](https://qrng.anu.edu.au/API/api-demo.php) currently supports only a maximum of 1,024 random numbers per request, thus requests for more numbers have to split up into smaller requests of maximum 1,024 numbers. In fact, each request may take a couple of seconds to be served.
+
+The greatest possible requestes per function
+
+* `qrandom(n = 100000, type = "hex16", blocksize = 1024)` takes about 13 minutes and its size is about 201.4 MB
+
+* `qrandomunif(n = 100000)` takes about 7 minutes and its size is about 781.3 KB
+
+* `qrandomnorm(n = 100000, method = "boxmuller")` takes about 8 minutes and its size is about 781.3 KB
+
+via a DSL 16,000 internet connection.
+
 Notes
 -----
 
+
 * **qrandom**
 
-  This function generates a true random sequence of up to 1,024 numbers per request. The type
+  This function generates a true random sequence of up to 100,000 numbers per request. The type
   - 'uint8' generates integer values between 0 and 255 (both including).
   - 'uint16' generates integer values between 0 and 65,535 (both including).
   - 'hex16' generates hexadecimal values between 00 and ff (both including).
   
-  The 'blocksize' is only needed for request type 'hex16' and sets the length of each block which can be a length between 1 and 1,024 (both including).
+  The option 'blocksize' is only needed for request type 'hex16' and sets the length of each block which can be a length between 1 and 1,024 (both including).
   Further information can be obtained by the official QRNG\@ANU JSON API documentation [here](https://qrng.anu.edu.au/API/api-demo.php).
 
 * **qrandomunif**
 
-  This function returns a sample of 1 - 1,024 true random numbers from a uniform distribution with parameters a (minimum value) and b (maximum value).
-  Per default (a=0 and b=1), a standard uniform distribution is assumed.
+  This function returns a sample of 1 - 100,000 true random numbers from a uniform distribution with parameters a (minimum value) and b (maximum value), both a and b included, i.e. all values are within the interval [a; b]. Per default (a=0 and b=1), a standard uniform distribution is assumed.
 
-  Normalization of data into the interval [a; b] is done by using the "min-max" formula as described [here](https://stats.stackexchange.com/a/178629/188976). This method can not be applied for one single number as this would result in the attempt of a  division by zero. For two number, this method results into returning 0 and 1 in all cases. So if only one or two numbers are requested, these numbers (which are within the interval [0; 65,535]) are divided by their possible maximum value of 65,535. For all requests with three or more true random numbers, the mentioned min-max normalization is used.
 
 * **qrandomnorm**
 
   This function implements 'qrandom' and transforms the true random sequence into random numbers from a normal distribution with parameters mean = a and variance = b.
-  The transformation is done via ... . Be default, the transformation results in a standard normal distribution
-  with mean 0 and variance 1.
+  The transformation is done via ... . Be default, the transformation results in a standard normal distribution with mean 0 and variance 1.
+  
+  
+  | method 				| stats:qnorm	| inverse | polar    | boxmuller |
+  | ----------------- | -----------	| --------| ---------| ----------|
+  | minimum z-value* 	| -8.209536 	| -8.12589| -8.36707 | -8.490424 |
+  | maximum z-value* 	| 8.209536 	| 8.12589 | 8.36707  | 8.490424  |
+  | z-values +- Inf 	| Yes 			| Yes     | No       | No        |
+  **non-infinite values*.
+
+To-Do
+------------
+* Ziggurat algorithm for 'qrandomnorm'.
+* Speed up / parallelize requests for thousands of true random numbers in 'qrandom'.
 
 Contributing
 ------------

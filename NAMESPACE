@@ -1,7 +1,13 @@
 
 importFrom("curl", "curl")
+importFrom("stats", "qnorm")
+importFrom("methods", "new")
 importFrom("jsonlite", "fromJSON")
 importFrom("utils", "read.table")
+importFrom("utils", "setTxtProgressBar")
+importFrom("utils", "txtProgressBar")
+importFrom("Rmpfr", "mpfr")
+
 
 export("qrandom",
        "qrandomunif",
