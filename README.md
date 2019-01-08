@@ -72,18 +72,18 @@ Notes
   
   Internally, uniformly distributed true random numbers within the interval [0; 1] are requested via `qrandomunif()`. Within these uniformly data, the smallest possible number greater than zero is 2.220446e-16 and the largest possible number less than one is 0.9999999999999997779554.
 
-We provide three methods to transform our standard uniformly data into a normal distribution:
+  We provide three methods to transform our standard uniformly data into a normal distribution:
 
-* [Inverse transform sampling](https://en.wikipedia.org/w/index.php?title=Inverse_transform_sampling&oldid=866923287): The sample of standard uniformly data is interpreted as a probability and transformed into a normal distribution applying the `stats::qnorm()` function.
+  * [Inverse transform sampling](https://en.wikipedia.org/w/index.php?title=Inverse_transform_sampling&oldid=866923287): The sample of standard uniformly data is interpreted as a probability and transformed into a normal distribution applying the `stats::qnorm()` function.
 
-* The [polar-method](https://en.wikipedia.org/w/index.php?title=Marsaglia_polar_method&oldid=871161902) by George Marsaglia.
+  * The [polar-method](https://en.wikipedia.org/w/index.php?title=Marsaglia_polar_method&oldid=871161902) by George Marsaglia.
 
-* [Box-Muller transformation](https://en.wikipedia.org/w/index.php?title=Box-Muller_transform&oldid=873905617) by George Box and Mervin Muller.
+  * [Box-Muller transformation](https://en.wikipedia.org/w/index.php?title=Box-Muller_transform&oldid=873905617) by George Box and Mervin Muller.
 
 
-Be aware that only the default method 'inverse' is able to return -Inf and +Inf z-values for the normal distribution. The following table summarizes the non-infinite minimum and maximum z-values for a standard normal distribution for each method provided and compares them with the non-infinite extreme values from the R-core function `stats::qnorm()`:
+  Be aware that only the default method 'inverse' is able to return -Inf and +Inf z-values for the normal distribution. The following table summarizes the non-infinite minimum and maximum z-values for a standard normal distribution for each method provided and compares them with the non-infinite extreme values from the R-core function `stats::qnorm()`:
   
-  | method 				| stats:qnorm	| inverse | polar    | boxmuller |
+  | method 				| stats:qnorm()	| inverse | polar    | boxmuller |
   | ----------------- | -----------	| --------| ---------| ----------|
   | minimum z-value* 	| -8.209536 	| -8.12589| -8.36707 | -8.490424 |
   | maximum z-value* 	| 8.209536 	| 8.12589 | 8.36707  | 8.490424  |
