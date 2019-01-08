@@ -93,6 +93,7 @@ Notes
 
 To-Do
 ------------
+* Add more tests to increase codecov.
 * Ziggurat algorithm for 'qrandomnorm'.
 * Speed up / parallelize requests for thousands of true random numbers in 'qrandom'.
 
