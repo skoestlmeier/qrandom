@@ -10,6 +10,7 @@ cache: packages
 
 r_packages:
   - covr
+  - Rmpfr
 
 after_success:
   - Rscript --verbose -e 'library(covr); codecov()'
