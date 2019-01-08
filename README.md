@@ -35,8 +35,7 @@ Data
 -----
 We try our best to provide unique true random numbers. All API requests provided by this package are using SSL. As long as nobody is able to break the encryption protocol, the random numbers you obtain should be unique and secure.
 
-
-The true random numbers provided by this package are generated in real-time by measuring the quantum fluctuations of the vacuum. The official [QRNG@ANU JSON API](https://qrng.anu.edu.au/API/api-demo.php) currently supports only a maximum of 1,024 random numbers per request, thus requests for more numbers have to split up into smaller requests of maximum 1,024 numbers. In fact, each request may take a couple of seconds to be served.
+The true random numbers provided by this package are generated in real-time by measuring the quantum fluctuations of the vacuum. The official [QRNG@ANU JSON API](https://qrng.anu.edu.au/API/api-demo.php) currently supports only a maximum of 1,024 random numbers per request, thus requests for more numbers have to be splitted up into smaller requests of a maximum of 1,024 numbers. In fact, each request may take a couple of seconds to be served.
 
 The greatest possible requestes per function
 
@@ -69,15 +68,27 @@ Notes
 
 * **qrandomnorm**
 
-  This function implements 'qrandom' and transforms the true random sequence into random numbers from a normal distribution with parameters mean = a and variance = b.
-  The transformation is done via ... . Be default, the transformation results in a standard normal distribution with mean 0 and variance 1.
+  This function returns a sample of 1 - 100,000 true random numbers from a normal distribution. Per default, a standard normal distribution with mean zero and standard deviation of one is assumed.
   
+  Internally, uniformly distributed true random numbers within the interval [0; 1] are requested via `qrandomunif()`. Within these uniformly data, the smallest possible number greater than zero is 2.220446e-16 and the largest possible number less than one is 0.9999999999999997779554.
+
+We provide three methods to transform our standard uniformly data into a normal distribution:
+
+* [Inverse transform sampling](https://en.wikipedia.org/w/index.php?title=Inverse_transform_sampling&oldid=866923287): The sample of standard uniformly data is interpreted as a probability and transformed into a normal distribution applying the `stats::qnorm()` function.
+
+* The [polar-method](https://en.wikipedia.org/w/index.php?title=Marsaglia_polar_method&oldid=871161902) by George Marsaglia.
+
+* [Box-Muller transformation](https://en.wikipedia.org/w/index.php?title=Box-Muller_transform&oldid=873905617) by George Box and Mervin Muller.
+
+
+Be aware that only the default method 'inverse' is able to return -Inf and +Inf z-values for the normal distribution. The following table summarizes the non-infinite minimum and maximum z-values for a standard normal distribution for each method provided and compares them with the non-infinite extreme values from the R-core function `stats::qnorm()`:
   
   | method 				| stats:qnorm	| inverse | polar    | boxmuller |
   | ----------------- | -----------	| --------| ---------| ----------|
   | minimum z-value* 	| -8.209536 	| -8.12589| -8.36707 | -8.490424 |
   | maximum z-value* 	| 8.209536 	| 8.12589 | 8.36707  | 8.490424  |
   | z-values +- Inf 	| Yes 			| Yes     | No       | No        |
+  
   **non-infinite values*.
 
 To-Do
@@ -96,6 +107,23 @@ Please read the [contribution guidelines](CONTRIBUTING.md) on how to contribute 
 
 Code of conduct
 ------------
-
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
+Legal issues
+------------
+`qrandom` -- An R interface to the ANU Quantum Random Numbers Server
+
+Copyright (C) 2018  Siegfried Köstlmeier <siegfried.koestlmeier@gmail.com>
+
+`qrandom` is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+`qrandom` is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with `qrandom`. If not, see <http://www.gnu.org/licenses/>.

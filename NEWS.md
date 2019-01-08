@@ -3,6 +3,12 @@
 
 `qrandom` implements an interface to the ANU Quantum Random Numbers Server and offers true random numbers by measuring the quantum fluctuations of the vacuum.
 
+This package offers functions to retrieve a sequenze of random integers or hexadecimals and to generate true random samples from a normal or uniform distribution. Functions of `qrandom` are:
+
+* qrandom (sequence of true random numbers)
+* qrandomunif (true random numbers from a uniform distribution)
+* qrandomnorm (true random numbers from a normal distribution)
+
 ## References
   Secure Quantum Communication group,
   Centre for Quantum Computing and Communication Technology,
