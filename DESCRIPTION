@@ -2,7 +2,7 @@ Package: qrandom
 Type: Package
 Title: True Random Numbers using the ANU Quantum Random Numbers Server
 Version: 1.0
-Date: 2018-12-03
+Date: 2019-01-08
 Authors@R: c(person(given = "Siegfried", family = "Köstlmeier", role = c("aut", "cre"), email = "siegfried.koestlmeier@gmail.com"))
 Maintainer: Siegfried Köstlmeier <siegfried.koestlmeier@gmail.com>
 Description: The ANU Quantum Random Number Generator provided by the Australian National University
@@ -11,7 +11,7 @@ Description: The ANU Quantum Random Number Generator provided by the Australian 
  By carefully measuring these fluctuations, one is able to generate ultra-high bandwidth random numbers.
  The quantum Random Number Generator is based on the papers by Symul et al., (2011) <doi:10.1063/1.3597793>
  and Haw, et al. (2015) <doi:10.1103/PhysRevApplied.3.054004>.
- The package offers functions to retrieve a sequenze of random integers or hexadecimals and true random samples from a normal or uniform distribution.
+ The package offers functions to retrieve a sequence of random integers or hexadecimals and true random samples from a normal or uniform distribution.
 License: GPL-2 | file LICENSE
 Imports: curl, jsonlite, methods, Rmpfr, utils
 Suggests: testthat
