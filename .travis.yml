@@ -8,6 +8,9 @@ warnings_are_errors: true
 sudo: true
 cache: packages
 
+before_install:
+  - sudo apt-get install libmpfr-dev
+
 r_packages:
   - covr
   - Rmpfr
