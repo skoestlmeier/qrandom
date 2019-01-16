@@ -45,9 +45,9 @@ The greatest possible number of requests per function
 
 * `qrandomnorm(n = 100000, method = "boxmuller")` takes about 8 minutes and its size is about 781.3 KB
 
-* `qrandommaxint(n = 100000)` takes about 7 minutes and its size is about 400.0 KB
+* `qrandommaxint(n = 100000)` takes about 4 minutes and its size is about 400.0 KB
 
-* `qUUID(n = 100000)` takes about 7 minutes and its size is about 800.1 KB
+* `qUUID(n = 100000)` takes about 4 minutes and its size is about 9.9 MB
 
 via a DSL 16,000 internet connection.
 
