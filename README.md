@@ -14,11 +14,13 @@ Overview
 *[Maximization of Extractable Randomness in a Quantum Random-Number Generator](https://doi.org/10.1103/PhysRevApplied.3.054004)* by Haw, et al. (2015).
 
 ### Key Features
-This package offers functions to retrieve a sequence of random integers or hexadecimals and to generate true random samples from a normal or uniform distribution. Functions of `qrandom` are:
+This package offers functions to retrieve a sequence of random integers, signed integers, hexadecimals, and UUID's. Furthermore, one is able to generate true random samples from a normal or uniform distribution. Functions of `qrandom` are:
 
 * qrandom (sequence of true random numbers)
 * qrandomunif (true random numbers from a uniform distribution)
 * qrandomnorm (true random numbers from a normal distribution)
+* qrandommaxint (true random uniformly distributed signed integers in the range `[-.Machine$integer.max; .Machine$integer.max]`)
+* qUUID (true random Universally Unique IDentifiers (UUID), conforming to RFC 4122)
 
 Installation
 ------------
