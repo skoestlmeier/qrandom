@@ -14,7 +14,7 @@ Overview
 *[Maximization of Extractable Randomness in a Quantum Random-Number Generator](https://doi.org/10.1103/PhysRevApplied.3.054004)* by Haw, et al. (2015).
 
 ### Key Features
-This package offers functions to retrieve a sequenze of random integers or hexadecimals and to generate true random samples from a normal or uniform distribution. Functions of `qrandom` are:
+This package offers functions to retrieve a sequence of random integers or hexadecimals and to generate true random samples from a normal or uniform distribution. Functions of `qrandom` are:
 
 * qrandom (sequence of true random numbers)
 * qrandomunif (true random numbers from a uniform distribution)
@@ -37,13 +37,17 @@ We try our best to provide unique true random numbers. All API requests provided
 
 The true random numbers provided by this package are generated in real-time by measuring the quantum fluctuations of the vacuum. The official [QRNG@ANU JSON API](https://qrng.anu.edu.au/API/api-demo.php) currently supports only a maximum of 1,024 random numbers per request, thus requests for more numbers have to be splitted up into smaller requests of a maximum of 1,024 numbers. In fact, each request may take a couple of seconds to be served.
 
-The greatest possible requestes per function
+The greatest possible number of requests per function
 
 * `qrandom(n = 100000, type = "hex16", blocksize = 1024)` takes about 13 minutes and its size is about 201.4 MB
 
 * `qrandomunif(n = 100000)` takes about 7 minutes and its size is about 781.3 KB
 
 * `qrandomnorm(n = 100000, method = "boxmuller")` takes about 8 minutes and its size is about 781.3 KB
+
+* `qrandommaxint(n = 100000)` takes about 7 minutes and its size is about 400.0 KB
+
+* `qUUID(n = 100000)` takes about 7 minutes and its size is about 800.1 KB
 
 via a DSL 16,000 internet connection.
 
@@ -90,6 +94,17 @@ Notes
   | z-values +- Inf 	| Yes 			| Yes     | No       | No        |
   
   **non-infinite values*.
+
+
+
+* **qrandommaxint**
+
+  This function returns a sample of 1 - 100,000 true random uniformly distributed signed integers in the range `[-.Machine$integer.max; .Machine$integer.max]`.
+
+* **qUUID**
+
+  This function returns true random Universally Unique IDentifiers (UUID), conforming to RFC 4122.
+
 
 To-Do
 ------------

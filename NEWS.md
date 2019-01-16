@@ -1,3 +1,9 @@
+# qrandom 1.1
+## New features
+
+* qrandommaxint (true random signed integers)
+* qUUID (true random Universally Unique IDs (UUID))
+
 # qrandom 1.0
 ## New features
 
