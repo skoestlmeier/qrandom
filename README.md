@@ -47,6 +47,8 @@ The greatest possible number of requests per function
 
 * `qrandommaxint(n = 100000)` takes about 7 minutes and its size is about 400.0 KB
 
+* `qUUID(n = 100000)` takes about 7 minutes and its size is about 800.1 KB
+
 via a DSL 16,000 internet connection.
 
 Notes
@@ -98,6 +100,10 @@ Notes
 * **qrandommaxint**
 
   This function returns a sample of 1 - 100,000 true random uniformly distributed signed integers in the range `[-.Machine$integer.max; .Machine$integer.max]`.
+
+* **qUUID**
+
+  This function returns true random Universally Unique IDentifiers (UUID), conforming to RFC 4122.
 
 
 To-Do
