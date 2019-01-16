@@ -1,3 +1,8 @@
+# qrandom 1.1
+## New features
+
+* qrandommaxint (true random signed integers)
+
 # qrandom 1.0
 ## New features
 

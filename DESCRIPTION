@@ -1,9 +1,10 @@
 Package: qrandom
 Type: Package
 Title: True Random Numbers using the ANU Quantum Random Numbers Server
-Version: 1.0
+Version: 1.1
 Date: 2019-01-08
-Authors@R: c(person(given = "Siegfried", family = "Köstlmeier", role = c("aut", "cre"), email = "siegfried.koestlmeier@gmail.com"))
+Authors@R: c(person(given = "Siegfried", family = "Köstlmeier", role = c("aut", "cre"), email = "siegfried.koestlmeier@gmail.com"),
+             person(given = "Boris", family = "Steipe", role = c("ctb"), email = "boris.steipe@utoronto.ca", comment = c(ORCID = "0000-0002-1134-6758")))
 Maintainer: Siegfried Köstlmeier <siegfried.koestlmeier@gmail.com>
 Description: The ANU Quantum Random Number Generator provided by the Australian National University
  generates true random numbers in real-time by measuring the quantum fluctuations of the vacuum. This package offers an interface using their API.

@@ -11,4 +11,5 @@ importFrom("Rmpfr", "mpfr")
 
 export("qrandom",
        "qrandomunif",
-       "qrandomnorm")
+       "qrandomnorm",
+       "qrandommaxint")
