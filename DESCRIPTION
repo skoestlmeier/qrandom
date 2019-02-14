@@ -2,8 +2,8 @@ Package: qrandom
 Type: Package
 Title: True Random Numbers using the ANU Quantum Random Numbers Server
 Version: 1.1
-Date: 2019-01-08
-Authors@R: c(person(given = "Siegfried", family = "Köstlmeier", role = c("aut", "cre"), email = "siegfried.koestlmeier@gmail.com"),
+Date: 2019-02-14
+Authors@R: c(person(given = "Siegfried", family = "Köstlmeier", role = c("aut", "cre"), email = "siegfried.koestlmeier@gmail.com", comment = c(ORCID = "0000-0002-7221-6981")),
              person(given = "Boris", family = "Steipe", role = c("ctb"), email = "boris.steipe@utoronto.ca", comment = c(ORCID = "0000-0002-1134-6758")))
 Maintainer: Siegfried Köstlmeier <siegfried.koestlmeier@gmail.com>
 Description: The ANU Quantum Random Number Generator provided by the Australian National University
