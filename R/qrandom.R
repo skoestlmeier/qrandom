@@ -153,6 +153,11 @@ qrandomunif <- function(n = 1,
             type = "hex16",
             blocksize = 7)
 
+  # cast 'a' and 'b' to mpfr
+  # see https://github.com/skoestlmeier/qrandom/issues/2 for further details
+  a_tmp <- mpfr(a, base = 10, precBits = 52)
+  b_tmp <- mpfr(b, base = 10, precBits = 52)
+
   ## delete first (random) character
   tmp <- substring(tmp, 2)
 
@@ -161,16 +166,16 @@ qrandomunif <- function(n = 1,
 
   ## Normalization within the interval [0; 1]
   urand <- tmp / mpfr("fffffffffffff", base = 16)
-  urand <- as.numeric(urand)
+  #urand <- as.numeric(urand)
 
 
   if (a != 0 || b != 1) {
     ## transform distribution to have minimum value 'a' and maximum value of 'b',
     ## so data is uniformly distributed within the interval [a, b].
-    urand <- (b - a) * urand + a
+    urand <- (b_tmp - a_tmp) * urand + a_tmp
   }
 
-  return(urand)
+  return(as.numeric(urand))
 
 }
 
