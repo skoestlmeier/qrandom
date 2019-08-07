@@ -22,4 +22,10 @@ test_that('qrandom', {
   expect_equal(class(tmp), c("character"))
   expect_equal(dim(tmp), NULL)
 
+  tmp <- qrandomnorm(method = "polar")
+  expect_type(tmp, "double")
+
+  tmp <- qrandomnorm(method = "boxmuller")
+  expect_type(tmp, "double")
+
 })

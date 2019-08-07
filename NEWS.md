@@ -1,3 +1,6 @@
+# qrandom 1.2
+* Added `testthat` test-cases for further development
+
 # qrandom 1.1
 ## New features
 
