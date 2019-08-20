@@ -23,7 +23,7 @@ We provide three methods to transform our standard uniformly data \eqn{U(0,1)} i
 \item{boxmuller}{Using the Box-Muller transformation by George Box and Mervin Muller for generating normal distributed data.}
 }
 
-Be aware that only the default method 'inverse' is able to return -Inf and +Inf z-values for the normal distribution. The following table summarizes the non-infinite minimum and maximum z-values for a standard normal distribution for each method provided and compares them with the non-infinite extreme values from \link[stats]{qnorm}:
+Be aware that only the default method 'inverse' is able to return -Inf and +Inf z-values for the normal distribution. The following table summarizes the non-infinite minimum and maximum z-values for a standard normal distribution for each method provided and compares them with the non-infinite extreme values from \link[stats:Normal]{stats::qnorm()}:
 
 \tabular{lcccc}{
     method            \tab stats:qnorm()  \tab inverse    \tab polar    \tab boxmuller\cr

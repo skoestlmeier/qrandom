@@ -14,7 +14,7 @@ b62bf84c248c9734c2da06e3f2041001 *R/qrandommaxint.R
 ea40d92eb42d11827441f92bbb72d96b *man/qrandom.Rd
 1e5be27788ac0ec2c3a6187b579ff4c0 *man/qrandommaxint.Rd
 72425593574718d9f402a8a37aad4b34 *man/qrandomunif.Rd
-61b5b78a2e1f0132b0aea575b4fa3b5b *man/qrandomnorm.Rd
+572c506f3443ba5755549e5c6fb1f025 *man/qrandomnorm.Rd
 028e38dc33ebaab3d405ba284afc3e38 *man/qUUID.Rd
 d3815dca1d12ce22c2f3df56d1651531 *man/qRandomSeq.Rd
 86c80052edc47339c447616f848b172e *tests/testthat.R
