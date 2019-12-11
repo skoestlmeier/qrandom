@@ -62,6 +62,10 @@ qUUID <- function(n = 1) {
   # n: number of uuids to return
   # value: n RFC 1422 conforming, random UUIDs
 
+  if(!curl::has_internet()){
+    cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
+  }else{
+
   x <- qrandom::qrandom(n = n, type = "hex16", blocksize = 16)
   x <- tolower(x)
   x <- sapply(x, FUN = x32bit)
@@ -71,6 +75,7 @@ qUUID <- function(n = 1) {
   names(x) <- NULL
 
   return(x)
+  }
 }
 
 # [END]

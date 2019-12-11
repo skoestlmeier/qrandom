@@ -47,13 +47,17 @@ qrandommaxint <- function(n = 1) {
   # return: integer: n signed 32-bit integers in the range
   #                  [-.Machine$integer.max; .Machine$integer.max]
 
+  if(!curl::has_internet()){
+    cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
+  }else{
+
   x <- qrandom::qrandom(n = n, type = "hex16", blocksize = 4)
   x[x == "80000000"] <- "00000000"  # input would underflow: "-0"
 
   int <- sapply(x, FUN = function(x) { bit2int(x2bit(x)) }, USE.NAMES = FALSE)
 
   return(int)
-
+  }
 }
 
 # [END]

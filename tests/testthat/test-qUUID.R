@@ -2,6 +2,8 @@ context('functions')
 
 test_that("qUUID() returns valid output", {
   x <- qUUID(10)
+
+  if(curl::has_internet()){
   # returns values
   expect_equal(10, length(x))
   # correct string length
@@ -22,6 +24,9 @@ test_that("qUUID() returns valid output", {
 
   expect_true(all(x[71, ] == 0))
   expect_true(all(x[72, ] == 1))
+  }else{
+    expect_success(expect_null(x))
+  }
 
 })
 

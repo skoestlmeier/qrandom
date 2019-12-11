@@ -81,6 +81,10 @@ qrandom <- function(n = 1,
     stop("The variable 'blocksize' must be between 1 and 1,024.")
   }
 
+  if(!curl::has_internet()){
+    cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
+  }else{
+
   tmp <- c()
 
   count <- n %/% 1024
@@ -118,6 +122,7 @@ qrandom <- function(n = 1,
                    blocksize = blocksize)
   }
   return(tmp)
+  }
 }
 
 qrandomunif <- function(n = 1,
@@ -148,6 +153,10 @@ qrandomunif <- function(n = 1,
   ## See the comment on qrandomnorm() for futher information on why we choose especially
   ## block-size 7 and delete the first character of each hexadecimal number.
 
+  if(!curl::has_internet()){
+    cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
+  }else{
+
   tmp <-
     qrandom(n = n,
             type = "hex16",
@@ -176,7 +185,7 @@ qrandomunif <- function(n = 1,
   }
 
   return(as.numeric(urand))
-
+  }
 }
 
 qrandomnorm <- function(n = 1,
@@ -200,6 +209,10 @@ qrandomnorm <- function(n = 1,
       "The method for generating true normal random variables has to be 'inverse', 'polar' or 'boxmuller'."
     )
   }
+
+  if(!curl::has_internet()){
+    cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
+  }else{
 
   ## Our procedure described in the initial comment on qrandomunif() garanties that qrandomunif() returns true random numbers,
   ## where the smallest possible number greater than zero is 2.220446e-16 and the largest possible number less than
@@ -238,6 +251,7 @@ qrandomnorm <- function(n = 1,
   }
 
   return(x)
+  }
 }
 
 ## Implementation of the Marsaglia Bray Polar method, see https://en.wikipedia.org/w/index.php?title=Marsaglia_polar_method&oldid=871161902

@@ -1,3 +1,6 @@
+# qrandom 1.2.1
+* The CRAN policy states that packages which use Internet resources should fail gracefully with an informative message if the resource is not available (and not give a check warning nor error). This is implemented both in the package functions and the testthat unit tests.
+
 # qrandom 1.2
 * Added `testthat` test-cases for further development
 
