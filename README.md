@@ -131,7 +131,7 @@ Legal issues
 ------------
 `qrandom` -- An R interface to the ANU Quantum Random Numbers Server
 
-Copyright (C) 2018  Siegfried Köstlmeier <siegfried.koestlmeier@gmail.com>
+Copyright (C) 2020  Siegfried Köstlmeier <siegfried.koestlmeier@gmail.com>
 
 `qrandom` is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License

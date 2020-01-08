@@ -47,7 +47,7 @@ qrandommaxint <- function(n = 1) {
   # return: integer: n signed 32-bit integers in the range
   #                  [-.Machine$integer.max; .Machine$integer.max]
 
-  if(!curl::has_internet()){
+  if(!curl::has_internet() | check_qrng() < 0){
     cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
   }else{
 

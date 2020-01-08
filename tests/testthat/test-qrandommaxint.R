@@ -14,14 +14,11 @@ context('functions')
 
 test_that('qrandommaxint() gives expected output', {
   x <- qrandommaxint(2)
-  if(curl::has_internet()){
+
   expect_equal(2,         length(x))
   expect_equal("integer", class(x))
   expect_equal("integer", typeof(x))
   expect_equal("numeric", mode(x))
-  }else{
-    expect_success(expect_null(x))
-  }
 })
 
 # [END]

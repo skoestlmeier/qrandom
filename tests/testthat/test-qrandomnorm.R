@@ -2,7 +2,7 @@ context('functions')
 
 test_that('qrandomnorm', {
   tmp <- qrandomnorm(10)
-  if(curl::has_internet()){
+
   expect_equal(length(tmp), 10)
   expect_success(expect_error(qrandomnorm(n = "a"), "The number 'n' of random numbers to return has to be an integer."))
   expect_success(expect_error(qrandomnorm(n = 2.5), "The number 'n' of random numbers to return has to be an integer."))
@@ -14,7 +14,5 @@ test_that('qrandomnorm', {
   expect_equal(class(tmp), c("numeric"))
   expect_equal(dim(tmp), NULL)
   expect_equal(typeof(tmp), c("double"))
-  }else{
-    expect_success(expect_null(tmp))
-  }
+
 })

@@ -1,3 +1,6 @@
+# qrandom 1.2.2
+* This update extends the implementation of v1.2.1. While the latter just checks if the device is connected to the internet, this version explicitely checks if the ANU Quantum Random Number Generator provided by the Australian National University is available and accessible by its provided API.
+
 # qrandom 1.2.1
 * The CRAN policy states that packages which use Internet resources should fail gracefully with an informative message if the resource is not available (and not give a check warning nor error). This is implemented both in the package functions and the testthat unit tests.
 

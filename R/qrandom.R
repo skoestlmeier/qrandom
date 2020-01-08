@@ -17,6 +17,18 @@
 ##  You should have received a copy of the GNU General Public License
 ##  along with qrandom. If not, see <http://www.gnu.org/licenses/>.
 
+check_qrng <- function(){
+  tryCatch(
+    expr = {
+      req <- curl::curl_fetch_memory('https://qrng.anu.edu.au/index.php')
+      req$status_code
+    },
+    error = function(e){
+      -1
+    }
+  )
+}
+
 getConnection <- function(website, ...) {
   if (capabilities()["libcurl"]) {
     url(website, ..., method = "libcurl")
@@ -81,7 +93,7 @@ qrandom <- function(n = 1,
     stop("The variable 'blocksize' must be between 1 and 1,024.")
   }
 
-  if(!curl::has_internet()){
+  if(!curl::has_internet() | check_qrng() < 0){
     cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
   }else{
 
@@ -153,7 +165,7 @@ qrandomunif <- function(n = 1,
   ## See the comment on qrandomnorm() for futher information on why we choose especially
   ## block-size 7 and delete the first character of each hexadecimal number.
 
-  if(!curl::has_internet()){
+  if(!curl::has_internet() | check_qrng() < 0){
     cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
   }else{
 
@@ -210,7 +222,7 @@ qrandomnorm <- function(n = 1,
     )
   }
 
-  if(!curl::has_internet()){
+  if(!curl::has_internet() | check_qrng() < 0){
     cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
   }else{
 

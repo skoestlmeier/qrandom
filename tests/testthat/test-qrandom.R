@@ -3,7 +3,6 @@ context('functions')
 test_that('qrandom', {
   tmp <- qrandom()
 
-  if(curl::has_internet()){
   expect_equal(length(tmp), 1)
   expect_success(expect_error(qrandom(n = "a"), "The number 'n' of random numbers to return has to be an integer."))
   expect_success(expect_error(qrandom(n = 2.5, blocksize = 1), "The number 'n' of random numbers to return has to be an integer."))
@@ -29,7 +28,5 @@ test_that('qrandom', {
 
   tmp <- qrandomnorm(method = "boxmuller")
   expect_type(tmp, "double")
-  }else{
-    expect_success(expect_null(tmp))
-  }
+
 })
