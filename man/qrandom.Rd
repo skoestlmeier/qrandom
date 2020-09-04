@@ -35,7 +35,7 @@ Further information can be obtained from the ANU Quantum Random Number Generator
 }
 
 \value{
-  \code{qrandom} returns an object of \code{\link{class}} \code{"integer"} for data type \code{uint8} or \code{uint16} and an object af class \code{"character"} for data type \code{hex16}. For numeric calculations, the hexadecimal characters have to be coerced to an appropriate class prior to calculations (e.g. with \code{base::as.hexmode} or \code{Rmpfr::mpfr}).
+  \code{qrandom} returns an object of \code{\link{class}} \code{"integer"} for data type \code{uint8} or \code{uint16} and an object of class \code{"character"} for data type \code{hex16}. For numeric calculations, the hexadecimal characters have to be coerced to an appropriate class prior to calculations (e.g. with \code{base::as.hexmode} or \code{Rmpfr::mpfr}).
 
   The returning value of \code{"qrandom"} is a \code{"vector"} containing true random numbers.
 

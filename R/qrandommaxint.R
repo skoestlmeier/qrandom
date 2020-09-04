@@ -47,8 +47,14 @@ qrandommaxint <- function(n = 1) {
   # return: integer: n signed 32-bit integers in the range
   #                  [-.Machine$integer.max; .Machine$integer.max]
 
-  if(!curl::has_internet() | check_qrng() < 0){
-    cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
+  if(!curl::has_internet()){
+    message("No Internet connection! \n")
+    return(invisible(NULL))
+  }
+
+  if(!check_qrng() == 200){
+    message("The ANU Quantum Random Number Generator service is currently not available at [https://qrng.anu.edu.au/index.php]. \n")
+    return(invisible(NULL))
   }else{
 
   x <- qrandom::qrandom(n = n, type = "hex16", blocksize = 4)

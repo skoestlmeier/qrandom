@@ -93,9 +93,16 @@ qrandom <- function(n = 1,
     stop("The variable 'blocksize' must be between 1 and 1,024.")
   }
 
-  if(!curl::has_internet() | check_qrng() < 0){
-    cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
-  }else{
+  if(!curl::has_internet()){
+    message("No Internet connection! \n")
+    return(invisible(NULL))
+  }
+
+  if(!check_qrng() == 200){
+    message("The ANU Quantum Random Number Generator service is currently not available at [https://qrng.anu.edu.au/index.php]. \n")
+    return(invisible(NULL))
+  }
+  else{
 
   tmp <- c()
 
@@ -165,8 +172,14 @@ qrandomunif <- function(n = 1,
   ## See the comment on qrandomnorm() for futher information on why we choose especially
   ## block-size 7 and delete the first character of each hexadecimal number.
 
-  if(!curl::has_internet() | check_qrng() < 0){
-    cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
+  if(!curl::has_internet()){
+    message("No Internet connection! \n")
+    return(invisible(NULL))
+  }
+
+  if(!check_qrng() == 200){
+    message("The ANU Quantum Random Number Generator service is currently not available at [https://qrng.anu.edu.au/index.php]. \n")
+    return(invisible(NULL))
   }else{
 
   tmp <-
@@ -222,8 +235,14 @@ qrandomnorm <- function(n = 1,
     )
   }
 
-  if(!curl::has_internet() | check_qrng() < 0){
-    cat("The ANU Quantum Random Number Generator service is not available at [https://qrng.anu.edu.au/index.php].\nAre you connected to the internet?\n")
+  if(!curl::has_internet()){
+    message("No Internet connection! \n")
+    return(invisible(NULL))
+  }
+
+  if(!check_qrng() == 200){
+    message("The ANU Quantum Random Number Generator service is currently not available at [https://qrng.anu.edu.au/index.php]. \n")
+    return(invisible(NULL))
   }else{
 
   ## Our procedure described in the initial comment on qrandomunif() garanties that qrandomunif() returns true random numbers,
