@@ -10,7 +10,7 @@ qrandomnorm(n = 1, mean = 0, sd = 1, method = "inverse")
 }
 \details{
 \code{qrandomnorm} is based on the function \code{\link{qrandom}} to generate a sequence of a minimum of 1 and a maximum of 100,000 true random numbers.
-The true random numbers are generated in real-time by measuring the quantum fluctuations of the vacuum. The official \href{https://qrng.anu.edu.au/API/api-demo.php}{QRNG@ANU JSON API} currently supports only a maximum of 1,024 random numbers per request, thus requests for more numbers have to split up into smaller requests of maximum 1,024 numbers. In fact, each request may take a couple of seconds to be served. The greatest possible requests \code{qrandomnorm(n = 100000, method = "polar")} or \code{qrandomnorm(n = 100000, method = "boxmuller")} take about 8 minutes (via DSL 16,000 internet connection) and their size is about 781.3 KB. Per default, the sequence of numbers is transformed into a standard normal distribution \eqn{N(0,1)}, with \eqn{mean=0} and standard deviation \eqn{sd=1}.
+The true random numbers are generated in real-time by measuring the quantum fluctuations of the vacuum. The official \href{https://qrng.anu.edu.au/contact/api-documentation/}{QRNG@ANU API} currently supports only a maximum of 1,024 random numbers per request, thus requests for more numbers have to split up into smaller requests of maximum 1,024 numbers. In fact, each request may take a couple of seconds to be served. The greatest possible requests \code{qrandomnorm(n = 100000, method = "polar")} or \code{qrandomnorm(n = 100000, method = "boxmuller")} take about 8 minutes (via DSL 16,000 internet connection) and their size is about 781.3 KB. Per default, the sequence of numbers is transformed into a standard normal distribution \eqn{N(0,1)}, with \eqn{mean=0} and standard deviation \eqn{sd=1}.
 
 Internally, uniformly distributed true random numbers within the interval [0; 1] from the function \link[qrandom]{qrandomunif} are used to obtain normal distributed data. Within these uniformly data, the smallest possible number greater than zero is 2.220446e-16 and the largest possible number less than one is 0.9999999999999997779554.
 
@@ -33,11 +33,9 @@ Be aware that only the default method 'inverse' is able to return -Inf and +Inf 
   }
 *non-infinite values.
 
-At the moment, there is no limitation for the number of requests per user but if you need a huge amount of (non-live) true random numbers, there is a 10 MB, a 100 MB, a 1,000 MB and a few 5,000 MB torrents of random binary files provided for download by the ANU Quantum Random Number Generator Server \href{http://qrng.anu.edu.au/FAQ.php#api}{here}.
-
 We try our best to provide unique true random numbers. All API requests provided by this package are using SSL. As long as nobody is able to break the encryption protocol, the random numbers you obtain should be unique and secure.
 
-Further information can be obtained from the ANU Quantum Random Number Generator \href{http://qrng.anu.edu.au/FAQ.php}{FAQ} and the list of references to \href{http://qrng.anu.edu.au/Links.php}{scientific papers}.
+Further information can be obtained from the ANU Quantum Random Number Generator \href{https://qrng.anu.edu.au/contact/faq/}{FAQ} and the list of references to \href{https://qrng.anu.edu.au/}{scientific papers}.
 }
 \arguments{
   \item{n}{The amount of random numbers to return. Must be between 1 and 100,000.}
@@ -70,7 +68,7 @@ Further information can be obtained from the ANU Quantum Random Number Generator
   Research School of Physics and Engineering,
   The Australian National University, Canberra, ACT 0200, Australia.
   \emph{Welcome to the ANU Quantum Random Numbers Server.}
-  \href{https://qrng.anu.edu.au/index.php}{https://qrng.anu.edu.au/index.php}
+  \href{https://qrng.anu.edu.au/}{https://qrng.anu.edu.au/}
 
   Wikipedia contributors. (2018, November 2). Inverse transform sampling. In Wikipedia, The Free Encyclopedia. Retrieved 13:03, January 4, 2019, from \href{https://en.wikipedia.org/w/index.php?title=Inverse_transform_sampling&oldid=866923287}{https://en.wikipedia.org/w/index.php?title=Inverse_transform_sampling&oldid=866923287}.
 

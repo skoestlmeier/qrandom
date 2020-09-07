@@ -2,13 +2,13 @@
 \alias{qrandom}
 \title{Raw sequence of true random numbers by measuring the quantum fluctuations of the vacuum}
 \description{
-  \code{qrandom} implements an interface to the \href{https://qrng.anu.edu.au/index.php}{ANU Quantum Random Number Generator} provided by the Australian National University. An ultra-high bandwith of true random numbers is generated in real-time by measuring the quantum fluctuations of the vacuum.
+  \code{qrandom} implements an interface to the \href{https://qrng.anu.edu.au/}{ANU Quantum Random Number Generator} provided by the Australian National University. An ultra-high bandwith of true random numbers is generated in real-time by measuring the quantum fluctuations of the vacuum.
 }
 \usage{
 qrandom(n = 1, type = "uint8", blocksize = 1)
 }
 \details{
-\code{qrandom} is based on the official \href{https://qrng.anu.edu.au/API/api-demo.php}{QRNG@ANU JSON API}. The data type
+\code{qrandom} is based on the official \href{https://qrng.anu.edu.au/contact/api-documentation/}{QRNG@ANU API}. The data type
 \itemize{
   \item \code{uint8} returns uniformly distributed integers from the interval \eqn{[0; 255]}.
   \item \code{uint16} returns uniformly distributed integers from the interval \eqn{[0; 65,535]}.
@@ -17,13 +17,11 @@ qrandom(n = 1, type = "uint8", blocksize = 1)
 
 Each request can return a minimum of 1 and a maximum of 100,000 true random numbers. The parameter \code{blocksize} is only relevant for data type \code{hex16} and sets the length of each block. \code{blocksize} must be between 1 and 1,024. A request with data type \code{"hex16"} returns hexadecimal characters with class \code{\link{class}} \code{character} and type \code{character}. For numeric calculation with these characters \code{randomHexCharacters}, they have to be coerced e.g. with \code{base::as.hexmode(randomHexCharacters)} for smaller hexadecimal numbers, or e.g. with \code{Rmpfr::mpfr(randomHexCharacters, base = 16)} for arbitrary precision floating point numbers.
 
-The true random numbers are generated in real-time by measuring the quantum fluctuations of the vacuum. The official \href{https://qrng.anu.edu.au/API/api-demo.php}{QRNG@ANU JSON API} supports only a maximum of 1,024 random numbers per request, thus requests for more numbers have to split up into smaller requests of 1,024 numbers. In fact, each request may take a couple of seconds to be served. The greatest possible request \code{qrandom(n = 100000, type = "hex16", blocksize = 1024)} takes about 13 minutes (via DSL 16,000 internet connection) and its size is about 201.4 MB.
-
-At the moment, there is no limitation for the number of requests per user but if you need a huge amount of (non-live) true random numbers, there is a 10 MB, a 100 MB, a 1,000 MB and a few 5,000 MB torrents of random binary files provided for download by the ANU Quantum Random Number Generator Server \href{http://qrng.anu.edu.au/FAQ.php#api}{here}.
+The true random numbers are generated in real-time by measuring the quantum fluctuations of the vacuum. The official \href{https://qrng.anu.edu.au/contact/api-documentation/}{QRNG@ANU API} supports only a maximum of 1,024 random numbers per request, thus requests for more numbers have to split up into smaller requests of 1,024 numbers. In fact, each request may take a couple of seconds to be served. The greatest possible request \code{qrandom(n = 100000, type = "hex16", blocksize = 1024)} takes about 13 minutes (via DSL 16,000 internet connection) and its size is about 201.4 MB.
 
 We try our best to provide unique true random numbers. All API requests provided by this package are using SSL. As long as nobody is able to break the encryption protocol, the random numbers you obtain should be unique and secure.
 
-Further information can be obtained from the ANU Quantum Random Number Generator \href{http://qrng.anu.edu.au/FAQ.php}{FAQ} and the list of references to \href{http://qrng.anu.edu.au/Links.php}{scientific papers}.
+Further information can be obtained from the ANU Quantum Random Number Generator \href{https://qrng.anu.edu.au/contact/faq/}{FAQ} and the list of references to \href{https://qrng.anu.edu.au/}{scientific papers}.
 
 }
 \arguments{
@@ -49,7 +47,7 @@ Further information can be obtained from the ANU Quantum Random Number Generator
   Research School of Physics and Engineering,
   The Australian National University, Canberra, ACT 0200, Australia.
   \emph{Welcome to the ANU Quantum Random Numbers Server.}
-  \href{https://qrng.anu.edu.au/index.php}{https://qrng.anu.edu.au/index.php}
+  \href{https://qrng.anu.edu.au/}{https://qrng.anu.edu.au/}
 }
 
 \examples{

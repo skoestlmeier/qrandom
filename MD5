@@ -3,7 +3,7 @@ ffa10f40b98be2c2bc9608f56827ed23 *LICENSE
 0630b333ba42745a7f61114bc44f8c4b *CODE_OF_CONDUCT.md
 b7bd4cf1ad4aa905a094df3255212bd7 *NAMESPACE
 2787a6fd6949ef9044f3295e0467ce08 *NEWS.md
-7ae5a86b3728cb5c20a25bd2f82bb2d8 *README.md
+478132ae0cb6cd87d0c2086be366a2a0 *README.md
 df42b8c2dc586afd130269d1b8f5bc36 *THANKS
 f825e020a333559b135befdecf607f23 *CONTRIBUTING.md
 9393589b1e79c09190e7ffe311e23ad2 *PULL_REQUEST_TEMPLATE.md
@@ -11,12 +11,12 @@ adf6f9014bd7c86c75d21ba7994bc632 *cran-comments.md
 601d387bb2331a096009d9118e24c6f8 *R/qrandom.R
 526798a5300707efb54e36a510652233 *R/qrandommaxint.R
 1445db26707653afece941bb92a64f38 *R/qUUID.R
-518b91dda47a33ac5e65a99975c743c8 *man/qrandom.Rd
-1e5be27788ac0ec2c3a6187b579ff4c0 *man/qrandommaxint.Rd
-72425593574718d9f402a8a37aad4b34 *man/qrandomunif.Rd
-572c506f3443ba5755549e5c6fb1f025 *man/qrandomnorm.Rd
-028e38dc33ebaab3d405ba284afc3e38 *man/qUUID.Rd
-d3815dca1d12ce22c2f3df56d1651531 *man/qRandomSeq.Rd
+77cc1102ab6d9320cae5bb084fd5a2de *man/qrandom.Rd
+7e314abc277789dff667270509610a18 *man/qrandommaxint.Rd
+41d74d0917f119d9a53ffa4fef49e728 *man/qrandomunif.Rd
+f4f1f6021259684a705881e3a5c24b38 *man/qrandomnorm.Rd
+ca12aaa67dba0c72e03bd6fea0a4e7d2 *man/qUUID.Rd
+d0467fa4316bbcd148928ac1651659c4 *man/qRandomSeq.Rd
 711aaa0e8947d1d12500c09ad78bc211 *tests/testthat.R
 b3238f2c0a171e65fdb4c29face562f6 *tests/testthat/test-qrandom.R
 b51863f425df0c9a75ef4de6aaf89c97 *tests/testthat/test-qrandommaxint.R

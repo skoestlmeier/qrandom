@@ -37,7 +37,7 @@ Data
 -----
 We try our best to provide unique true random numbers. All API requests provided by this package are using SSL. As long as nobody is able to break the encryption protocol, the random numbers you obtain should be unique and secure.
 
-The true random numbers provided by this package are generated in real-time by measuring the quantum fluctuations of the vacuum. The official [QRNG@ANU JSON API](https://qrng.anu.edu.au/API/api-demo.php) currently supports only a maximum of 1,024 random numbers per request, thus requests for more numbers have to be splitted up into smaller requests of a maximum of 1,024 numbers. In fact, each request may take a couple of seconds to be served.
+The true random numbers provided by this package are generated in real-time by measuring the quantum fluctuations of the vacuum. The official [QRNG@ANU API](https://qrng.anu.edu.au/contact/api-documentation/) currently supports only a maximum of 1,024 random numbers per request, thus requests for more numbers have to be splitted up into smaller requests of a maximum of 1,024 numbers. In fact, each request may take a couple of seconds to be served.
 
 The greatest possible number of requests per function
 
@@ -65,7 +65,7 @@ Notes
   - 'hex16' generates hexadecimal values between 00 and ff (both including).
   
   The option 'blocksize' is only needed for request type 'hex16' and sets the length of each block which can be a length between 1 and 1,024 (both including).
-  Further information can be obtained by the official QRNG\@ANU JSON API documentation [here](https://qrng.anu.edu.au/API/api-demo.php).
+  Further information can be obtained by the official QRNG\@ANU API documentation [here](https://qrng.anu.edu.au/contact/api-documentation/).
 
 * **qrandomunif**
 
