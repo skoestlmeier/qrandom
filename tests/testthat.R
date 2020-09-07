@@ -5,7 +5,7 @@ library(qrandom)
 check_qrng <- function(){
   tryCatch(
     expr = {
-      req <- curl::curl_fetch_memory('https://qrng.anu.edu.au/index.php')
+      req <- curl::curl_fetch_memory('https://qrng.anu.edu.au/')
       req$status_code
     },
     error = function(e){

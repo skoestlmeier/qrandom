@@ -8,7 +8,7 @@ df42b8c2dc586afd130269d1b8f5bc36 *THANKS
 f825e020a333559b135befdecf607f23 *CONTRIBUTING.md
 9393589b1e79c09190e7ffe311e23ad2 *PULL_REQUEST_TEMPLATE.md
 adf6f9014bd7c86c75d21ba7994bc632 *cran-comments.md
-601d387bb2331a096009d9118e24c6f8 *R/qrandom.R
+a33b05d21b530f3eb22516abec280f46 *R/qrandom.R
 526798a5300707efb54e36a510652233 *R/qrandommaxint.R
 1445db26707653afece941bb92a64f38 *R/qUUID.R
 77cc1102ab6d9320cae5bb084fd5a2de *man/qrandom.Rd
@@ -17,7 +17,7 @@ adf6f9014bd7c86c75d21ba7994bc632 *cran-comments.md
 f4f1f6021259684a705881e3a5c24b38 *man/qrandomnorm.Rd
 ca12aaa67dba0c72e03bd6fea0a4e7d2 *man/qUUID.Rd
 d0467fa4316bbcd148928ac1651659c4 *man/qRandomSeq.Rd
-711aaa0e8947d1d12500c09ad78bc211 *tests/testthat.R
+4d6fb80afeece5ca3220b94f1d4bfbd8 *tests/testthat.R
 b3238f2c0a171e65fdb4c29face562f6 *tests/testthat/test-qrandom.R
 b51863f425df0c9a75ef4de6aaf89c97 *tests/testthat/test-qrandommaxint.R
 788c13e24f30fb8218e9b706463d3db3 *tests/testthat/test-qrandomunif.R
