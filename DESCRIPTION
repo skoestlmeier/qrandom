@@ -2,7 +2,7 @@ Package: qrandom
 Type: Package
 Title: True Random Numbers using the ANU Quantum Random Numbers Server
 Version: 1.2.4
-Date: 2020-04-22
+Date: 2021-04-22
 Authors@R: c(person(given = "Siegfried", family = "Köstlmeier", role = c("aut", "cre"), email = "siegfried.koestlmeier@gmail.com", comment = c(ORCID = "0000-0002-7221-6981")),
              person(given = "Boris", family = "Steipe", role = c("ctb"), email = "boris.steipe@utoronto.ca", comment = c(ORCID = "0000-0002-1134-6758")))
 Maintainer: Siegfried Köstlmeier <siegfried.koestlmeier@gmail.com>

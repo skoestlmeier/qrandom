@@ -1,11 +1,9 @@
 context('functions')
 
 test_that('qrandomunif', {
-  skip_if_offline(host = "qrng.anu.edu.au")
+  skip_on_cran()
 
   tmp <- qrandomunif(10)
-
-  skip_if(is.null(tmp))
 
   expect_equal(length(tmp), 10)
   expect_success(expect_error(qrandomunif(n = "a"), "The number 'n' of random numbers to return has to be an integer."))

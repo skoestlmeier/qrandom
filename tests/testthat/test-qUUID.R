@@ -1,11 +1,9 @@
 context('functions')
 
 test_that("qUUID() returns valid output", {
-  skip_if_offline(host = "qrng.anu.edu.au")
+  skip_on_cran()
 
   x <- qUUID(10)
-
-  skip_if(is.null(x))
 
   # returns values
   expect_equal(10, length(x))
