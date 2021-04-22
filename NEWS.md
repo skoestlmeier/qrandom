@@ -1,4 +1,7 @@
 # qrandom 1.2.3
+* Bug fixes for v.1.2.3
+
+# qrandom 1.2.3
 * This update implements the CRAN policy for the provided functions to fail gracefully if no internet resource is available:
 'Packages which use Internet resources should fail gracefully with an informative message if the resource is not available (and not give a check warning nor error)'.
 

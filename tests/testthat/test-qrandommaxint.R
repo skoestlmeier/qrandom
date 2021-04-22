@@ -13,7 +13,11 @@ context('functions')
   })
 
 test_that('qrandommaxint() gives expected output', {
+  skip_if_offline(host = "qrng.anu.edu.au")
+
   x <- qrandommaxint(2)
+
+  skip_if(is.null(x))
 
   expect_equal(2,         length(x))
   expect_equal("integer", class(x))
