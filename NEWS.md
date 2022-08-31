@@ -1,4 +1,10 @@
-# qrandom 1.2.3
+# qrandom 1.2.6
+* Bug fixes for v.1.2.6.
+
+# qrandom 1.2.5
+* Manual adjustments for KaTeX (or Mathjax) to render LaTeX-like mathematical equations.
+
+# qrandom 1.2.4
 * Bug fixes for v.1.2.3
 
 # qrandom 1.2.3
